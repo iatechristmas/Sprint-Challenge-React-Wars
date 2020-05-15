@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const OutsideDiv = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
   display: flex;
   flex-flow: wrap;
   margin: auto;
   padding: 5%; */
-  /* background-color: black; */
   width: 50%;
-  font-weight: bold;
-
-  /* img {
-    height: auto;
-    width: 10%;
-  } */
+  font-family: 'Amatic SC', cursive;
 `;
 
 const InsideDiv = styled.div`
@@ -21,18 +16,33 @@ const InsideDiv = styled.div`
   padding: 1%;
   margin: 1%;
   width: 20%;
-  border: 2px solid rgb(210, 210, 210);
+  border: 2px solid #8ffd44;
   border-radius: 8px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  font-weight: bold;
+  font-size: 2rem;
+  -webkit-text-stroke: 0.2px #8ffd44;
 
   img {
     height: auto;
     width: 100%;
+    border: 3px solid #8ffd44;
+    border-radius: 8px;
+  }
+
+  h2 {
+    border-radius: 8px;
+    background-color: #8ffd44;
+  }
+
+  p {
+    border-radius: 8px;
+    background-color: #8ffd44;
   }
 `;
 
 const Card = (props) => {
-  console.log("Card -> props", props.data);
+  //   console.log("Card -> props", props.data);
   return (
     <OutsideDiv>
       {props.data.map((item) => {
