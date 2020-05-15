@@ -8,11 +8,17 @@ const App = () => {
   const [data, setData] = useState([]);
   // console.log("App -> data", data);
   const [page, setPage] = useState(5);
-  console.log("page", page);
+  console.log(page);
 
-  // const Next = () => {
-  //   setPage(2);
-  // };
+  const Next = () => {
+    let currentPage = page;
+    setPage((currentPage += 1));
+  };
+
+  const Previous = () => {
+    let currentPage = page;
+    setPage((currentPage -= 1));
+  };
 
   useEffect(() => {
     axios
@@ -24,7 +30,7 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [page]);
 
   // const Previous = () => {
   //   setPage();
@@ -33,7 +39,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <button onClick={() => setPage(3)}>Next</button>
+      <button onClick={() => Previous()}>Previous</button>
+      <button onClick={() => Next()}>Next</button>
       <Card data={data} />a
     </div>
   );
